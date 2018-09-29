@@ -8,14 +8,10 @@
 
 import UIKit
 
-protocol ViewModelDelegates {
-    func didReceiveData()
-}
-
 class BaseViewModel  {
-    let delegate: ViewModelDelegates!
+    let delegate: BaseViewModelPatern!
     
-    init(delegate: ViewModelDelegates) {
+    init(delegate: BaseViewModelPatern) {
         self.delegate = delegate
     }
 

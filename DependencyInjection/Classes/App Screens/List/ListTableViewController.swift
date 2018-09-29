@@ -55,7 +55,7 @@ class ListTableViewController: UITableViewController {
 
 }
 
-extension ListTableViewController: ViewModelDelegates {
+extension ListTableViewController: BaseViewModelPatern {
     
     func didReceiveData() {
         tableView.reloadData()

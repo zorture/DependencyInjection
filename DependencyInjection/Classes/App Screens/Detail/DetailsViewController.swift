@@ -36,7 +36,7 @@ class DetailsViewController: UIViewController {
 
 }
 
-extension DetailsViewController: ViewModelDelegates {
+extension DetailsViewController: BaseViewModelPatern {
     func didReceiveData() {
         
     }

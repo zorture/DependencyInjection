@@ -12,7 +12,7 @@ class ListViewModel: BaseViewModel {
     
     let dataModel = ListDataModel()
     
-    override init(delegate: ViewModelDelegates) {
+    override init(delegate: BaseViewModelPatern) {
         super.init(delegate: delegate)
     }
 

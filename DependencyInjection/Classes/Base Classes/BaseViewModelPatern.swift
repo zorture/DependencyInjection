@@ -12,4 +12,5 @@ protocol BaseViewModelPatern {
     
 //    typealias T = BaseViewModel
 //    var viewModel: T?
+    func didReceiveData()
 }
