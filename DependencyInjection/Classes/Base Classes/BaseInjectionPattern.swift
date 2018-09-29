@@ -1,5 +1,5 @@
 //
-//  BaseInjectionPatern.swift
+//  BaseInjectionPattern.swift
 //  DependencyInjection
 //
 //  Created by Kanwar Zorawar Singh Rana on 9/29/18.
@@ -8,6 +8,6 @@
 
 import UIKit
 
-protocol BaseInjectionPatern {
+protocol BaseInjectionPattern {
    static func segueFromStoryboard<T, U>(withDependency dependency: U) -> T where T : UIViewController, U : Decodable
 }

@@ -9,8 +9,5 @@
 import UIKit
 
 protocol BaseViewModelPattern {
-    
-//    typealias T = BaseViewModel
-//    var viewModel: T?
     func didReceiveData()
 }

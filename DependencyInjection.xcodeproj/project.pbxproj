@@ -17,7 +17,7 @@
 		B900FD71215D66FE00D48B44 /* DetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B900FD70215D66FE00D48B44 /* DetailsViewModel.swift */; };
 		B900FD73215D671600D48B44 /* DetailsDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B900FD72215D671600D48B44 /* DetailsDataModel.swift */; };
 		B900FD75215FDD3800D48B44 /* BaseInjectionSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = B900FD74215FDD3800D48B44 /* BaseInjectionSegue.swift */; };
-		B900FD79215FF68900D48B44 /* BaseInjectionPatern.swift in Sources */ = {isa = PBXBuildFile; fileRef = B900FD78215FF68900D48B44 /* BaseInjectionPatern.swift */; };
+		B900FD79215FF68900D48B44 /* BaseInjectionPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = B900FD78215FF68900D48B44 /* BaseInjectionPattern.swift */; };
 		B900FD7D21600D6900D48B44 /* ListJsonDecode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B900FD7C21600D6900D48B44 /* ListJsonDecode.swift */; };
 		B900FD7F2160134400D48B44 /* BaseViewModelPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = B900FD7E2160134400D48B44 /* BaseViewModelPattern.swift */; };
 		B94C3757215B05A300BA7267 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94C3756215B05A300BA7267 /* AppDelegate.swift */; };
@@ -57,7 +57,7 @@
 		B900FD70215D66FE00D48B44 /* DetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewModel.swift; sourceTree = "<group>"; };
 		B900FD72215D671600D48B44 /* DetailsDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsDataModel.swift; sourceTree = "<group>"; };
 		B900FD74215FDD3800D48B44 /* BaseInjectionSegue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseInjectionSegue.swift; sourceTree = "<group>"; };
-		B900FD78215FF68900D48B44 /* BaseInjectionPatern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseInjectionPatern.swift; sourceTree = "<group>"; };
+		B900FD78215FF68900D48B44 /* BaseInjectionPattern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseInjectionPattern.swift; sourceTree = "<group>"; };
 		B900FD7C21600D6900D48B44 /* ListJsonDecode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListJsonDecode.swift; sourceTree = "<group>"; };
 		B900FD7E2160134400D48B44 /* BaseViewModelPattern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModelPattern.swift; sourceTree = "<group>"; };
 		B94C3753215B05A300BA7267 /* DependencyInjection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DependencyInjection.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -144,7 +144,7 @@
 				B900FD63215C595C00D48B44 /* BaseViewModel.swift */,
 				B900FD65215C59D200D48B44 /* BaseDataModel.swift */,
 				B900FD74215FDD3800D48B44 /* BaseInjectionSegue.swift */,
-				B900FD78215FF68900D48B44 /* BaseInjectionPatern.swift */,
+				B900FD78215FF68900D48B44 /* BaseInjectionPattern.swift */,
 				B900FD7E2160134400D48B44 /* BaseViewModelPattern.swift */,
 			);
 			path = "Base Classes";
@@ -351,7 +351,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B900FD79215FF68900D48B44 /* BaseInjectionPatern.swift in Sources */,
+				B900FD79215FF68900D48B44 /* BaseInjectionPattern.swift in Sources */,
 				B900FD66215C59D200D48B44 /* BaseDataModel.swift in Sources */,
 				B900FD75215FDD3800D48B44 /* BaseInjectionSegue.swift in Sources */,
 				B94C3759215B05A300BA7267 /* ViewController.swift in Sources */,

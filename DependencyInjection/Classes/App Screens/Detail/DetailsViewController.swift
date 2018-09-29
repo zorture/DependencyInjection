@@ -42,7 +42,7 @@ extension DetailsViewController: BaseViewModelPattern {
     }
 }
 
-extension DetailsViewController: BaseInjectionPatern {
+extension DetailsViewController: BaseInjectionPattern {
     static func segueFromStoryboard<T, U>(withDependency dependency: U) -> T where T : UIViewController, U : Decodable {
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         let viewController = storyboard.instantiateViewController(withIdentifier: "DetailsViewController") as! DetailsViewController
