@@ -8,13 +8,7 @@
 
 import UIKit
 
-class ListViewModel: BaseViewModel {
-    
-    let dataModel = ListDataModel()
-    
-    override init(delegate: BaseViewModelPatern) {
-        super.init(delegate: delegate)
-    }
+class ListViewModel: BaseViewModel<ListDataModel> {
 
     func fetchPost(searchQuery: String) {
         let executer = TaskExecuter()
@@ -32,7 +26,7 @@ class ListViewModel: BaseViewModel {
         executer.response(successHandler: { [weak self] (data) in
             do {
                 let list: List = try JSONDecoder().decode(List.self, from: data)
-                self?.dataModel.data = list.feed.results
+                self?.dataModel?.data = list.feed.results
                 DispatchQueue.main.async {
                     self?.delegate?.didReceiveData()
                 }

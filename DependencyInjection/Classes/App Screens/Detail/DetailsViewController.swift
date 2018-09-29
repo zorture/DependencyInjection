@@ -18,15 +18,15 @@ class DetailsViewController: UIViewController {
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        self.viewModel = DetailsViewModel(delegate: self)
+        self.viewModel = DetailsViewModel(delegate: self, dataModel: DetailsDataModel())
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         //let imageURL = URL(string: (viewModel?.dataModel.details?.artistURL)!)
         //imageView.image = try UIImage(data: Data(contentsOf: imageURL!))
-        artistNameLbl.text = viewModel?.dataModel.data?.artistName
-        collectionNameLabel.text = viewModel?.dataModel.data?.collectionName
+        artistNameLbl.text = viewModel?.dataModel?.data?.artistName
+        collectionNameLabel.text = viewModel?.dataModel?.data?.collectionName
     }
 
     override func didReceiveMemoryWarning() {
@@ -36,7 +36,7 @@ class DetailsViewController: UIViewController {
 
 }
 
-extension DetailsViewController: BaseViewModelPatern {
+extension DetailsViewController: BaseViewModelPattern {
     func didReceiveData() {
         
     }
@@ -46,7 +46,7 @@ extension DetailsViewController: BaseInjectionPatern {
     static func segueFromStoryboard<T, U>(withDependency dependency: U) -> T where T : UIViewController, U : Decodable {
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         let viewController = storyboard.instantiateViewController(withIdentifier: "DetailsViewController") as! DetailsViewController
-        viewController.viewModel?.dataModel.data = dependency as? Result
+        viewController.viewModel?.dataModel?.data = dependency as? Result
         return viewController as! T
     }
     

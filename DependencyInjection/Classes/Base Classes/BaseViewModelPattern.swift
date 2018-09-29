@@ -1,5 +1,5 @@
 //
-//  BaseViewModelPatern.swift
+//  BaseViewModelPattern.swift
 //  DependencyInjection
 //
 //  Created by Kanwar Zorawar Singh Rana on 9/29/18.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol BaseViewModelPatern {
+protocol BaseViewModelPattern {
     
 //    typealias T = BaseViewModel
 //    var viewModel: T?

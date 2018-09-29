@@ -8,6 +8,5 @@
 
 import UIKit
 
-class DetailsViewModel: BaseViewModel {
-    let dataModel = DetailsDataModel()
+class DetailsViewModel: BaseViewModel<DetailsDataModel> {
 }

@@ -10,5 +10,5 @@ import UIKit
 
 class BaseDataModel<T> {
     var modelID: Int? = nil
-    var data: T?    
+    var data: T?
 }

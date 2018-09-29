@@ -8,11 +8,12 @@
 
 import UIKit
 
-class BaseViewModel  {
-    let delegate: BaseViewModelPatern!
-    
-    init(delegate: BaseViewModelPatern) {
+class BaseViewModel<T>  {
+    let delegate: BaseViewModelPattern!
+    let dataModel: T?
+    init(delegate: BaseViewModelPattern, dataModel: T) {
         self.delegate = delegate
+        self.dataModel = dataModel
     }
 
 }

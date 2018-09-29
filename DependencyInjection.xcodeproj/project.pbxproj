@@ -19,7 +19,7 @@
 		B900FD75215FDD3800D48B44 /* BaseInjectionSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = B900FD74215FDD3800D48B44 /* BaseInjectionSegue.swift */; };
 		B900FD79215FF68900D48B44 /* BaseInjectionPatern.swift in Sources */ = {isa = PBXBuildFile; fileRef = B900FD78215FF68900D48B44 /* BaseInjectionPatern.swift */; };
 		B900FD7D21600D6900D48B44 /* ListJsonDecode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B900FD7C21600D6900D48B44 /* ListJsonDecode.swift */; };
-		B900FD7F2160134400D48B44 /* BaseViewModelPatern.swift in Sources */ = {isa = PBXBuildFile; fileRef = B900FD7E2160134400D48B44 /* BaseViewModelPatern.swift */; };
+		B900FD7F2160134400D48B44 /* BaseViewModelPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = B900FD7E2160134400D48B44 /* BaseViewModelPattern.swift */; };
 		B94C3757215B05A300BA7267 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94C3756215B05A300BA7267 /* AppDelegate.swift */; };
 		B94C3759215B05A300BA7267 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94C3758215B05A300BA7267 /* ViewController.swift */; };
 		B94C375C215B05A300BA7267 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B94C375A215B05A300BA7267 /* Main.storyboard */; };
@@ -59,7 +59,7 @@
 		B900FD74215FDD3800D48B44 /* BaseInjectionSegue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseInjectionSegue.swift; sourceTree = "<group>"; };
 		B900FD78215FF68900D48B44 /* BaseInjectionPatern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseInjectionPatern.swift; sourceTree = "<group>"; };
 		B900FD7C21600D6900D48B44 /* ListJsonDecode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListJsonDecode.swift; sourceTree = "<group>"; };
-		B900FD7E2160134400D48B44 /* BaseViewModelPatern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModelPatern.swift; sourceTree = "<group>"; };
+		B900FD7E2160134400D48B44 /* BaseViewModelPattern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModelPattern.swift; sourceTree = "<group>"; };
 		B94C3753215B05A300BA7267 /* DependencyInjection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DependencyInjection.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B94C3756215B05A300BA7267 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B94C3758215B05A300BA7267 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -145,7 +145,7 @@
 				B900FD65215C59D200D48B44 /* BaseDataModel.swift */,
 				B900FD74215FDD3800D48B44 /* BaseInjectionSegue.swift */,
 				B900FD78215FF68900D48B44 /* BaseInjectionPatern.swift */,
-				B900FD7E2160134400D48B44 /* BaseViewModelPatern.swift */,
+				B900FD7E2160134400D48B44 /* BaseViewModelPattern.swift */,
 			);
 			path = "Base Classes";
 			sourceTree = "<group>";
@@ -362,7 +362,7 @@
 				B900FD73215D671600D48B44 /* DetailsDataModel.swift in Sources */,
 				B900FD61215C592800D48B44 /* ListTableViewController.swift in Sources */,
 				B900FD71215D66FE00D48B44 /* DetailsViewModel.swift in Sources */,
-				B900FD7F2160134400D48B44 /* BaseViewModelPatern.swift in Sources */,
+				B900FD7F2160134400D48B44 /* BaseViewModelPattern.swift in Sources */,
 				B900FD6A215C64C500D48B44 /* ListViewModel.swift in Sources */,
 				B900FD64215C595C00D48B44 /* BaseViewModel.swift in Sources */,
 				B900FD6F215D66E000D48B44 /* DetailsViewController.swift in Sources */,
