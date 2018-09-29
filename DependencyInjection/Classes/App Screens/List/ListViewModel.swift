@@ -32,7 +32,7 @@ class ListViewModel: BaseViewModel {
         executer.response(successHandler: { [weak self] (data) in
             do {
                 let list: List = try JSONDecoder().decode(List.self, from: data)
-                self?.dataModel.results = list.feed.results
+                self?.dataModel.data = list.feed.results
                 DispatchQueue.main.async {
                     self?.delegate?.didReceiveData()
                 }

@@ -8,7 +8,6 @@
 
 import UIKit
 
-class DetailsDataModel: BaseDataModel {
-     var details: Result?
+class DetailsDataModel: BaseDataModel<Result> {
 }
 

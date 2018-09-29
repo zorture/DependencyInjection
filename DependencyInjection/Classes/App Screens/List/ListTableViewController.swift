@@ -27,19 +27,20 @@ class ListTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return viewModel?.dataModel.results?.count ?? 0
+        return viewModel?.dataModel.data?.count ?? 0
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "listCell", for: indexPath)
-        let data = viewModel?.dataModel.results![indexPath.row] as! Result
-        cell.textLabel?.text = data.artistName
+        if let data = viewModel?.dataModel.data![indexPath.row] {
+            cell.textLabel?.text = data.artistName
+        }
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let data = viewModel?.dataModel.results![indexPath.row] as! Result
+        let data = viewModel?.dataModel.data![indexPath.row]
         let detailVC = DetailsViewController.segueFromStoryboard(withDependency: data)
         let navController = self.navigationController
         navController?.pushViewController(detailVC, animated: true)

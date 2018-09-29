@@ -8,12 +8,7 @@
 
 import UIKit
 
-class BaseDataModel {
+class BaseDataModel<T> {
     var modelID: Int? = nil
-    var data: Decodable?
-    
+    var data: T?    
 }
-
-//struct BaseDataModel<T> {
-//    var item: T?
-//}
