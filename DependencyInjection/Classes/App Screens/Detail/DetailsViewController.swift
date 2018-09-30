@@ -10,10 +10,10 @@ import UIKit
 
 class DetailsViewController: UIViewController {
     
-    @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var collectionNameLabel: UILabel!
-    @IBOutlet weak var artistNameLbl: UILabel!
-    
+    @IBOutlet fileprivate weak var collectionNameLabel: UILabel!
+    @IBOutlet fileprivate weak var artistNameLbl: UILabel!
+    @IBOutlet fileprivate weak var artistIdLbl: UILabel!
+    @IBOutlet fileprivate weak var releaseDateLbl: UILabel!
     fileprivate var viewModel: DetailsViewModel?
     
     required init?(coder aDecoder: NSCoder) {
@@ -27,11 +27,19 @@ class DetailsViewController: UIViewController {
         //imageView.image = try UIImage(data: Data(contentsOf: imageURL!))
         artistNameLbl.text = viewModel?.dataModel?.data?.artistName
         collectionNameLabel.text = viewModel?.dataModel?.data?.collectionName
+        artistIdLbl.text = viewModel?.dataModel.data?.artistID
+        releaseDateLbl.text = viewModel?.dataModel.data?.releaseDate
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destination = segue.destination as? PreviewViewController
+        destination?.injectDependency(withDependency: viewModel?.dataModel.data?.artistURL)
+        print(segue.description)
     }
 
 }
@@ -50,5 +58,7 @@ extension DetailsViewController: BaseInjectionPattern {
         return viewController as! T
     }
     
+    func injectDependency<U>(withDependency dependency: U){
+    }
 }
 

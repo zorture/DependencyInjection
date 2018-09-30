@@ -49,14 +49,6 @@ class ListTableViewController: UITableViewController {
         let navController = self.navigationController
         navController?.pushViewController(detailVC, animated: true)
     }
- 
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        //let detailsVC = segue.destination as? DetailsViewController
-        //let data = viewModel?.dataModel.results![0] as! Result
-        //detailsVC?.viewModel?.dataModel.details = data
-        print(segue)
-    }
-
 }
 
 extension ListTableViewController: BaseViewModelPattern {

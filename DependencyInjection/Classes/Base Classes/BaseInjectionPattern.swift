@@ -10,4 +10,5 @@ import UIKit
 
 protocol BaseInjectionPattern {
    static func segueFromStoryboard<T, U>(withDependency dependency: U) -> T where T : UIViewController, U : Decodable
+    func injectDependency<U>(withDependency dependency: U)
 }
