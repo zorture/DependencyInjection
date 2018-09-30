@@ -10,7 +10,7 @@ import UIKit
 
 class ListTableViewController: UITableViewController {
     
-    fileprivate var viewModel: ListViewModel?
+    private var viewModel: ListViewModel?
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)

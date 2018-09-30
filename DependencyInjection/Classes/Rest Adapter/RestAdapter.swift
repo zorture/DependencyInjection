@@ -27,11 +27,12 @@ enum ExecutionExceptions: Error {
 
 typealias TaskSuccessCompletion = (_ response: Data) -> Void
 typealias TaskFailureCompletion = (_ error: Error) -> Void
+
 class TaskExecuter {
     
-    fileprivate var successHandler: TaskSuccessCompletion?
-    fileprivate var failureHandler: TaskFailureCompletion?
-    fileprivate let restAdapter = RestAdapter.shared
+    private var successHandler: TaskSuccessCompletion?
+    private var failureHandler: TaskFailureCompletion?
+    private let restAdapter = RestAdapter.shared
     
     func createRequestWith(urlString: String) throws {
         

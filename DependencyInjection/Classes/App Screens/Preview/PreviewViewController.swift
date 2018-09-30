@@ -10,8 +10,8 @@ import UIKit
 
 class PreviewViewController: UIViewController {
 
-    @IBOutlet fileprivate weak var imageView: UIImageView!
-    fileprivate var viewModel: PreviewViewModel?
+    @IBOutlet private weak var imageView: UIImageView!
+    private var viewModel: PreviewViewModel?
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)

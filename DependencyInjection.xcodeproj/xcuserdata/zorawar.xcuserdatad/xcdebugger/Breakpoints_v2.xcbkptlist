@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DependencyInjection/Classes/App Screens/Preview/PreviewViewController.swift"
-            timestampString = "560016323.857146"
+            timestampString = "560021494.67545"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "16"
-            endingLineNumber = "16"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
             landmarkName = "init(coder:)"
             landmarkType = "7">
          </BreakpointContent>

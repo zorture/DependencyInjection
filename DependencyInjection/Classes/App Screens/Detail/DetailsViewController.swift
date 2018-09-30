@@ -10,11 +10,11 @@ import UIKit
 
 class DetailsViewController: UIViewController {
     
-    @IBOutlet fileprivate weak var collectionNameLabel: UILabel!
-    @IBOutlet fileprivate weak var artistNameLbl: UILabel!
-    @IBOutlet fileprivate weak var artistIdLbl: UILabel!
-    @IBOutlet fileprivate weak var releaseDateLbl: UILabel!
-    fileprivate var viewModel: DetailsViewModel?
+    @IBOutlet private weak var collectionNameLabel: UILabel!
+    @IBOutlet private weak var artistNameLbl: UILabel!
+    @IBOutlet private weak var artistIdLbl: UILabel!
+    @IBOutlet private weak var releaseDateLbl: UILabel!
+    private var viewModel: DetailsViewModel?
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
