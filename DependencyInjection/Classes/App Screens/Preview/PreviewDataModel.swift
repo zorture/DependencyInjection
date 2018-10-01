@@ -9,5 +9,5 @@
 import UIKit
 
 class PreviewDataModel: BaseDataModel<String> {
-
+    var image: UIImage?
 }

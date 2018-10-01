@@ -23,8 +23,6 @@ class DetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //let imageURL = URL(string: (viewModel?.dataModel.details?.artistURL)!)
-        //imageView.image = try UIImage(data: Data(contentsOf: imageURL!))
         artistNameLbl.text = viewModel?.dataModel?.data?.artistName
         collectionNameLabel.text = viewModel?.dataModel?.data?.collectionName
         artistIdLbl.text = viewModel?.dataModel.data?.artistID
@@ -38,7 +36,7 @@ class DetailsViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destination = segue.destination as? PreviewViewController
-        destination?.injectDependency(withDependency: viewModel?.dataModel.data?.artistURL)
+        destination?.injectDependency(withDependency: viewModel?.dataModel.data?.artworkUrl100)
         print(segue.description)
     }
 

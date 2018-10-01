@@ -20,7 +20,7 @@ class PreviewViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        viewModel?.fetchPost(searchQuery: viewModel?.dataModel.data ?? "")
         // Do any additional setup after loading the view.
     }
 
@@ -44,7 +44,7 @@ class PreviewViewController: UIViewController {
 
 extension PreviewViewController: BaseViewModelPattern{
     func didReceiveData() {
-        
+        imageView.image = viewModel?.dataModel.image
     }
 }
 

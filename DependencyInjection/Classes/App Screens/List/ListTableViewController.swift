@@ -57,3 +57,15 @@ extension ListTableViewController: BaseViewModelPattern {
         tableView.reloadData()
     }
 }
+
+extension ListTableViewController: BaseInjectionPattern {
+    static func segueFromStoryboard<T, U>(withDependency dependency: U) -> T where T : UIViewController, U : Decodable {
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        let viewController = storyboard.instantiateViewController(withIdentifier: "ListTableViewController") as! ListTableViewController
+        viewController.viewModel?.dataModel?.data = dependency as? [Result]
+        return viewController as! T
+    }
+    
+    func injectDependency<U>(withDependency dependency: U){
+    }
+}
