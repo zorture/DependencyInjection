@@ -11,11 +11,13 @@ import UIKit
 class PreviewViewController: UIViewController {
 
     @IBOutlet private weak var imageView: UIImageView!
-    private var viewModel: PreviewViewModel?
+    private let viewModel: PreviewViewModel?
     
     required init?(coder aDecoder: NSCoder) {
+        self.viewModel = PreviewViewModel(dataModel: PreviewDataModel())
         super.init(coder: aDecoder)
-        self.viewModel = PreviewViewModel(delegate: self, dataModel: PreviewDataModel())
+        self.viewModel?.delegate = self
+        //self.viewModel = PreviewViewModel(delegate: self, dataModel: PreviewDataModel())
     }
     
     override func viewDidLoad() {

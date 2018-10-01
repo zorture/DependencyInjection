@@ -12,7 +12,7 @@ class ListViewModel: BaseViewModel<ListDataModel> {
 
     func fetchPost(searchQuery: String) {
         let executer = TaskExecuter()
-        let urlString = "https://rss.itunes.apple.com/api/v1/us/apple-music/hot-tracks/all/50/explicit.json"
+        let urlString = searchQuery
         do {
             _ = try executer.createRequestWith(urlString: urlString)
         } catch  ExecutionExceptions.InvalidURLString {

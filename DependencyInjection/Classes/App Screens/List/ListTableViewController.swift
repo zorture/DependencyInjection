@@ -10,16 +10,17 @@ import UIKit
 
 class ListTableViewController: UITableViewController {
     
-    private var viewModel: ListViewModel?
+    private let viewModel: ListViewModel?
     
     required init?(coder aDecoder: NSCoder) {
+        viewModel = ListViewModel(dataModel: ListDataModel())
         super.init(coder: aDecoder)
-        viewModel = ListViewModel(delegate: self, dataModel: ListDataModel())
+        viewModel?.delegate = self
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel?.fetchPost(searchQuery: "")
+        viewModel?.fetchPost(searchQuery: "https://rss.itunes.apple.com/api/v1/us/apple-music/hot-tracks/all/50/explicit.json")
     }
 
     override func didReceiveMemoryWarning() {
@@ -39,6 +40,7 @@ class ListTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "listCell", for: indexPath)
         if let data = viewModel?.dataModel?.data![indexPath.row] {
             cell.textLabel?.text = data.artistName
+            cell.detailTextLabel?.text = data.artistID
         }
         return cell
     }

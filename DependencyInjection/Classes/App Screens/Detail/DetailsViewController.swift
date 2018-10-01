@@ -14,11 +14,12 @@ class DetailsViewController: UIViewController {
     @IBOutlet private weak var artistNameLbl: UILabel!
     @IBOutlet private weak var artistIdLbl: UILabel!
     @IBOutlet private weak var releaseDateLbl: UILabel!
-    private var viewModel: DetailsViewModel?
+    private let viewModel: DetailsViewModel!
     
     required init?(coder aDecoder: NSCoder) {
+        self.viewModel = DetailsViewModel(dataModel: DetailsDataModel())
         super.init(coder: aDecoder)
-        self.viewModel = DetailsViewModel(delegate: self, dataModel: DetailsDataModel())
+        self.viewModel.delegate = self
     }
     
     override func viewDidLoad() {
