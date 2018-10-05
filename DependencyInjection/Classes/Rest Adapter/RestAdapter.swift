@@ -25,16 +25,24 @@ enum ExecutionExceptions: Error {
     case InvalidURL
 }
 
+enum Response<T> {
+    case Success(T)
+    case Failure(Error)
+}
+
 typealias TaskSuccessCompletion = (_ response: Data) -> Void
 typealias TaskFailureCompletion = (_ error: Error) -> Void
 
 class TaskExecuter {
     
+    //typealias GenericData = T?
+    //private var completionHandler: TaskCompletionCompletion?
+
     private var successHandler: TaskSuccessCompletion?
     private var failureHandler: TaskFailureCompletion?
     private let restAdapter = RestAdapter.shared
     
-    func createRequestWith(urlString: String) throws {
+    func fetchDecodableRequest<T: Decodable>(urlString: String, successHandler: @escaping (T) -> (), failureHandler: @escaping (Error) -> ()) throws {
         
         // Set String
         guard let urlString = urlString.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed) else { throw  ExecutionExceptions.InvalidURLString }
@@ -44,7 +52,18 @@ class TaskExecuter {
         
         // Execute the data Task
         let task = restAdapter.session.dataTask(with: url) { (data, response, error) in
-            self.processResponse(data: data, response: response, error: error)
+            //self.processResponse(data: data, response: response, error: error)
+            guard let data = data else {
+                guard let error = error else {
+                    return
+                }
+                failureHandler(error)
+
+                return
+            }
+            self.processDecodable(type: T.self, data: data, completion: { (model: T) in
+                successHandler(model)
+            })
         }
         
         // Add task to operation Q
@@ -52,24 +71,43 @@ class TaskExecuter {
         restAdapter.queue.addOperation(taskOperation)
     }
     
-    func response( successHandler: @escaping TaskSuccessCompletion, failureHandler: @escaping TaskFailureCompletion) {
-        self.successHandler = successHandler
-        self.failureHandler = failureHandler
-    }
-    
-   private func processResponse(data: Data?, response: URLResponse?, error: Error?) {
+    func fetchRequest(urlString: String, successHandler: @escaping (Data) -> (), failureHandler: @escaping (Error) -> ()) throws {
         
-        guard let data = data else {
-            guard let error = error else {
+        // Set String
+        guard let urlString = urlString.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed) else { throw  ExecutionExceptions.InvalidURLString }
+        
+        // Set URL
+        guard let url = URL.init(string: urlString) else { throw ExecutionExceptions.InvalidURL }
+        
+        // Execute the data Task
+        let task = restAdapter.session.dataTask(with: url) { (data, response, error) in
+            //self.processResponse(data: data, response: response, error: error)
+            guard let data = data else {
+                guard let error = error else {
+                    return
+                }
+                failureHandler(error)
+                
                 return
             }
-            failureHandler?(error)
-            return
+                successHandler(data)
         }
-        successHandler?(data)
+        
+        // Add task to operation Q
+        let taskOperation = TaskOperation.init(task: task)
+        restAdapter.queue.addOperation(taskOperation)
     }
     
-    
+   private func processDecodable<T: Decodable>(type: T.Type, data: Data, completion: @escaping (T) -> ()) {
+        do {
+            let model = try JSONDecoder().decode(T.self, from: data)
+            DispatchQueue.main.async {
+                completion(model)
+            }
+        } catch {
+            print(error)
+        }
+    }
 }
 
 class TaskOperation: Operation {

@@ -14,7 +14,15 @@ class PreviewViewModel: BaseViewModel<PreviewDataModel> {
         let executer = TaskExecuter()
         let urlString = searchQuery
         do {
-            _ = try executer.createRequestWith(urlString: urlString)
+            try executer.fetchRequest(urlString: urlString, successHandler: { [weak self] (data) in
+                let image = UIImage.init(data: data)
+                self?.dataModel.image = image
+                DispatchQueue.main.async {
+                    self?.delegate?.didReceiveData()
+                }
+                }, failureHandler: { (error) in
+                    print(error.localizedDescription)
+            })
         } catch  ExecutionExceptions.InvalidURLString {
             print("URL Sring is not correct")
         } catch  ExecutionExceptions.InvalidURL {
@@ -22,16 +30,5 @@ class PreviewViewModel: BaseViewModel<PreviewDataModel> {
         } catch {
             print(error.localizedDescription)
         }
-        
-        executer.response(successHandler: { [weak self] (data) in
-            let image = UIImage.init(data: data)
-            self?.dataModel.image = image
-            DispatchQueue.main.async {
-                self?.delegate?.didReceiveData()
-            }
-        }) { (error) in
-            print(error.localizedDescription)
-        }
-
     }
 }
